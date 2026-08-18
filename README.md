@@ -379,30 +379,11 @@ Install the required dependencies:
 npm install
 ```
 
-Create a `.env` file inside the `backend` folder:
-
-```env
-PORT=5000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-GCP_API_KEY=your_api_key
-```
-
-Replace the placeholder values with your own configuration.
-
-### Important
-
-Never upload your `.env` file to GitHub.
-
-Sensitive information such as:
-
+Create a `.env` file inside the `backend` folder with sensitive information such as:
 * API keys
 * Database connection strings
 * JWT secrets
 * Cloud credentials
-
-should always be stored in environment variables.
-
 ---
 
 ## 🎨 Frontend Setup
