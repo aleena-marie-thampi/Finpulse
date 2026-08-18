@@ -208,6 +208,38 @@ Each user's financial information is associated with their account.
 - GitHub
 - npm
 - VS Code
+
+---
+
+## 🏗️ Architecture
+
+FinPulse follows a full-stack architecture consisting of a React frontend, an Express.js backend, and a MongoDB database.
+
+```text
+                    ┌──────────────────────┐
+                    │      FinPulse        │
+                    │      Frontend        │
+                    │       React          │
+                    └──────────┬───────────┘
+                               │
+                               │ API Requests
+                               ▼
+                    ┌──────────────────────┐
+                    │      Backend         │
+                    │   Node.js + Express  │
+                    └──────────┬───────────┘
+                               │
+              ┌────────────────┼────────────────┐
+              │                │                │
+              ▼                ▼                ▼
+        ┌───────────┐   ┌─────────────┐   ┌────────────┐
+        │ MongoDB   │   │    Auth     │   │ AI Services│
+        │ Database  │   │ Middleware  │   │            │
+        └───────────┘   └─────────────┘   └────────────┘
+```
+
+---
+
 ## 📂 Project Structure
 
 ```text
@@ -244,7 +276,6 @@ Finpulse/
 │   │   └── icons.svg
 │   │
 │   ├── src/
-│   │   │
 │   │   ├── api/
 │   │   │   └── axios.js
 │   │   │
@@ -301,53 +332,61 @@ Finpulse/
 ├── package-lock.json
 ├── LICENSE
 └── README.md
-⚙️ Installation
----------------
+```
+
+---
+
+## ⚙️ Installation
 
 ### Prerequisites
 
 Make sure you have the following installed:
 
--   Node.js
--   npm
--   MongoDB / MongoDB Atlas
--   Git
+* Node.js
+* npm
+* MongoDB / MongoDB Atlas
+* Git
 
-* * * * *
+---
 
-📥 Clone the Repository
------------------------
+## 📥 Clone the Repository
 
 Clone the project from GitHub:
 
+```bash
 git clone https://github.com/aleena-marie-thampi/Finpulse.git
+```
 
 Navigate into the project:
 
+```bash
 cd Finpulse
+```
 
-* * * * *
+---
 
-📦 Backend Setup
-----------------
+## 📦 Backend Setup
 
 Navigate to the backend:
 
+```bash
 cd backend
+```
 
 Install the required dependencies:
 
+```bash
 npm install
+```
 
 Create a `.env` file inside the `backend` folder:
 
+```env
 PORT=5000
-
 MONGODB_URI=your_mongodb_connection_string
-
 JWT_SECRET=your_jwt_secret
-
 GCP_API_KEY=your_api_key
+```
 
 Replace the placeholder values with your own configuration.
 
@@ -357,59 +396,66 @@ Never upload your `.env` file to GitHub.
 
 Sensitive information such as:
 
--   API keys
--   Database connection strings
--   JWT secrets
--   Cloud credentials
+* API keys
+* Database connection strings
+* JWT secrets
+* Cloud credentials
 
 should always be stored in environment variables.
 
-* * * * *
+---
 
-🎨 Frontend Setup
------------------
+## 🎨 Frontend Setup
 
 Open a new terminal and navigate to the frontend:
 
+```bash
 cd frontend
+```
 
 Install dependencies:
 
+```bash
 npm install
+```
 
 If your frontend requires environment variables, create a local `.env` file and add the required configuration.
 
-* * * * *
+---
 
-▶️ Running the Application
---------------------------
+## ▶️ Running the Application
 
 ### Start the Backend
 
 From the `backend` directory:
 
+```bash
 npm run dev
+```
 
 The backend will start on the configured port.
 
-* * * * *
+---
 
 ### Start the Frontend
 
 From the `frontend` directory:
 
+```bash
 npm run dev
+```
 
 Vite will start the frontend development server.
 
 The application will generally be available at:
 
+```text
 http://localhost:5173
+```
 
-* * * * *
+---
 
-🔐 Environment Variables
-------------------------
+## 🔐 Environment Variables
 
 FinPulse uses environment variables to keep sensitive configuration secure.
 
@@ -417,13 +463,12 @@ FinPulse uses environment variables to keep sensitive configuration secure.
 
 Example:
 
+```env
 PORT=5000
-
 MONGODB_URI=your_mongodb_connection_string
-
 JWT_SECRET=your_jwt_secret
-
 GCP_API_KEY=your_api_key
+```
 
 ### Frontend
 
@@ -433,79 +478,58 @@ Add the required frontend environment variables based on your local configuratio
 
 The `.gitignore` file prevents `.env` files from being committed to the repository.
 
-* * * * *
+---
 
-🔄 Application Flow
--------------------
+## 🔄 Application Flow
 
 A typical user flow in FinPulse is:
 
+```text
 Register
-
    │
-
    ▼
-
 Login
-
    │
-
    ▼
-
 Dashboard
-
    │
-
    ├── Income
-
    │
-
    ├── Expenses
-
    │
-
    ├── Goals
-
    │
-
    ├── Analytics
-
    │
-
    ├── Emergency Fund
-
    │
-
    ├── Achievements
-
    │
-
    └── AI Coach
+```
 
 Users can enter their financial information and use the different sections to understand and manage their finances.
 
-* * * * *
+---
 
-📊 Financial Health
--------------------
+## 📊 Financial Health
 
 One of the main goals of FinPulse is to provide users with an overall understanding of their financial health.
 
 The platform considers financial information such as:
 
--   Income
--   Expenses
--   Savings
--   Savings rate
--   Financial goals
--   Emergency fund
+* Income
+* Expenses
+* Savings
+* Savings rate
+* Financial goals
+* Emergency fund
 
 This information is presented through the dashboard and analytics sections.
 
-* * * * *
+---
 
-🤖 AI Financial Coach
----------------------
+## 🤖 AI Financial Coach
 
 The AI Coach is designed to make financial management more interactive.
 
@@ -513,128 +537,118 @@ Instead of requiring users to interpret all their financial information themselv
 
 Potential use cases include:
 
--   Understanding spending behavior
--   Improving savings habits
--   Planning toward financial goals
--   Thinking through financial decisions
--   Receiving personalized suggestions
+* Understanding spending behavior
+* Improving savings habits
+* Planning toward financial goals
+* Thinking through financial decisions
+* Receiving personalized suggestions
 
-* * * * *
+---
 
-🎯 Project Objective
---------------------
+## 🎯 Project Objective
 
 The primary objective of FinPulse is to create a **centralized personal financial health platform** that combines financial tracking with analytics and intelligent guidance.
 
 The project focuses on moving from:
 
+```text
 Raw Financial Data
-
         ↓
-
 Financial Tracking
-
         ↓
-
 Analytics
-
         ↓
-
 Insights
-
         ↓
-
 Better Financial Decisions
+```
 
-* * * * *
+---
 
-🚀 Future Enhancements
-----------------------
+## 🚀 Future Enhancements
 
 Some possible improvements for future versions include:
 
--   Financial Decision Simulator
--   Advanced budgeting tools
--   Automated financial recommendations
--   More detailed financial reports
--   Improved AI financial planning
--   Personalized monthly financial summaries
--   Budget alerts
--   Recurring transaction support
--   More advanced data visualization
--   Financial forecasting
--   Mobile application
--   Cloud deployment
--   Improved gamification
+* Financial Decision Simulator
+* Advanced budgeting tools
+* Automated financial recommendations
+* More detailed financial reports
+* Improved AI financial planning
+* Personalized monthly financial summaries
+* Budget alerts
+* Recurring transaction support
+* More advanced data visualization
+* Financial forecasting
+* Mobile application
+* Cloud deployment
+* Improved gamification
 
-* * * * *
+---
 
-🔒 Security Considerations
---------------------------
+## 🔒 Security Considerations
 
 FinPulse uses environment variables for sensitive configuration.
 
 The repository intentionally excludes:
 
+```text
 .env
-
 .env.*
-
 node_modules/
+```
 
 Sensitive credentials should never be committed to the repository.
 
 Before deploying the application, make sure that:
 
--   API keys are stored securely
--   Database credentials are protected
--   JWT secrets are strong
--   Production environment variables are configured securely
--   Debugging information is disabled in production
+* API keys are stored securely
+* Database credentials are protected
+* JWT secrets are strong
+* Production environment variables are configured securely
+* Debugging information is disabled in production
 
-* * * * *
+---
 
-🧪 Development
---------------
+## 🧪 Development
 
 During development, the project can be run using separate frontend and backend development servers.
 
 ### Frontend
 
+```bash
 cd frontend
-
 npm run dev
+```
 
 ### Backend
 
+```bash
 cd backend
-
 npm run dev
+```
 
-* * * * *
+---
 
-📌 Technologies Used
---------------------
+## 📌 Technologies Used
 
-| Technology | Purpose |
-| --- | --- |
-| React | Frontend UI |
-| Vite | Frontend development and build |
-| JavaScript | Application logic |
-| Tailwind CSS | Styling |
-| Axios | API communication |
-| Node.js | Backend runtime |
-| Express.js | Backend API |
-| MongoDB | Database |
-| Mongoose | MongoDB object modeling |
-| JWT | Authentication |
-| Git | Version control |
-| GitHub | Repository hosting |
+| Technology   | Purpose                        |
+| ------------ | ------------------------------ |
+| React        | Frontend UI                    |
+| Vite         | Frontend development and build |
+| JavaScript   | Application logic              |
+| Tailwind CSS | Styling                        |
+| Axios        | API communication              |
+| Node.js      | Backend runtime                |
+| Express.js   | Backend API                    |
+| MongoDB      | Database                       |
+| Mongoose     | MongoDB object modeling        |
+| JWT          | Authentication                 |
+| Git          | Version control                |
+| GitHub       | Repository hosting             |
 
-* * * * *
+---
 
-💡 Why FinPulse?
-----------------
+## 💡 Why FinPulse?
 
 Traditional expense trackers mainly answer:
 
@@ -646,40 +660,39 @@ FinPulse aims to go a step further and help users answer:
 
 By combining tracking, analytics, goals, emergency fund monitoring, achievements, and AI-powered guidance, FinPulse provides a more complete view of personal financial health.
 
-* * * * *
+---
 
-📸 Screenshots
---------------
+## 📸 Screenshots
 
 Screenshots of the application can be added here to showcase the:
 
--   Home page
--   Dashboard
--   Analytics
--   Income management
--   Expense management
--   Goals
--   Emergency fund
--   AI Coach
--   Achievements
--   Login/Register pages
+* Home page
+* Dashboard
+* Analytics
+* Income management
+* Expense management
+* Goals
+* Emergency fund
+* AI Coach
+* Achievements
+* Login/Register pages
 
 Example:
 
+```markdown
 ![FinPulse Dashboard](screenshots/dashboard.png)
+```
 
-* * * * *
+---
 
-🌐 Repository
--------------
+## 🌐 Repository
 
-**GitHub:**\
-<https://github.com/aleena-marie-thampi/Finpulse>
+**GitHub:**
+[https://github.com/aleena-marie-thampi/Finpulse](https://github.com/aleena-marie-thampi/Finpulse)
 
-* * * * *
+---
 
-👩‍💻 Author
-------------
+## 👩‍💻 Author
 
 ### Aleena Marie Thampi
 
@@ -687,32 +700,30 @@ B.Tech Computer Science & Engineering
 
 Interested in:
 
--   Artificial Intelligence
--   Machine Learning
--   Full-Stack Development
--   Web Development
--   Software Development
+* Artificial Intelligence
+* Machine Learning
+* Full-Stack Development
+* Web Development
+* Software Development
 
-* * * * *
+---
 
-📄 License
-----------
+## 📄 License
 
-This project is licensed under the terms specified in the <LICENSE> file.
+This project is licensed under the terms specified in the [LICENSE](LICENSE) file.
 
-* * * * *
+---
 
-⭐ Acknowledgements
-------------------
+## ⭐ Acknowledgements
 
 FinPulse was developed as a full-stack project to explore modern web development, backend API development, database management, authentication, analytics, and AI integration.
 
-* * * * *
+---
 
-⭐ Support
----------
+## ⭐ Support
 
 If you find the project interesting, consider giving the repository a ⭐ on GitHub.
 
 ---
 
+**FinPulse — Track. Understand. Improve. 💰**
