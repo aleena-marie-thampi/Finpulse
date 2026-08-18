@@ -379,11 +379,30 @@ Install the required dependencies:
 npm install
 ```
 
-Create a `.env` file inside the `backend` folder with sensitive information such as:
+Create a `.env` file inside the `backend` folder:
+
+```env
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+GCP_API_KEY=your_api_key
+```
+
+Replace the placeholder values with your own configuration.
+
+### Important
+
+Never upload your `.env` file to GitHub.
+
+Sensitive information such as:
+
 * API keys
 * Database connection strings
 * JWT secrets
 * Cloud credentials
+
+should always be stored in environment variables.
+
 ---
 
 ## 🎨 Frontend Setup
@@ -442,22 +461,16 @@ FinPulse uses environment variables to keep sensitive configuration secure.
 
 ### Backend
 
-Example:
+Create a `.env` file inside the `backend` folder with sensitive information such as:
 
-```env
-PORT=5000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-GCP_API_KEY=your_api_key
-```
+* API keys
+* Database connection strings
+* JWT secrets
+* Cloud credentials
 
 ### Frontend
 
 Add the required frontend environment variables based on your local configuration.
-
-> **Do not use real credentials in this README.**
-
-The `.gitignore` file prevents `.env` files from being committed to the repository.
 
 ---
 
@@ -645,24 +658,29 @@ By combining tracking, analytics, goals, emergency fund monitoring, achievements
 
 ## 📸 Screenshots
 
-Screenshots of the application can be added here to showcase the:
+### Dashboard
 
-* Home page
-* Dashboard
-* Analytics
-* Income management
-* Expense management
-* Goals
-* Emergency fund
-* AI Coach
-* Achievements
-* Login/Register pages
-
-Example:
-
-```markdown
 ![FinPulse Dashboard](screenshots/dashboard.png)
-```
+
+### Income Tracker
+
+![FinPulse Income](screenshots/income.png)
+
+### Reports & Analytics
+
+![FinPulse Reports](screenshots/reports.png)
+
+### Emergency Fund
+
+![FinPulse Emergency Fund](screenshots/emergency.png)
+
+### AI Financial Coach
+
+![FinPulse AI Coach](screenshots/aicoach.png)
+
+### Achievements
+
+![FinPulse Achievements](screenshots/achievements.png)
 
 ---
 
